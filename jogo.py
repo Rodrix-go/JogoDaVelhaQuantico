@@ -1,4 +1,5 @@
 # Importando funções
+# teste git
 from func import *
 
 nomes = ["O", "X"]
