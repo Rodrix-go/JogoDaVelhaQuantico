@@ -5,10 +5,6 @@ opcs_validas = """
 """
 
 
-def printar():
-    print("oi")
-
-
 def valida_escolha(prim_escolha, seg_escolha):
     if prim_escolha > 8:
         print("A primeira opção está fora dos valores permitidos")
@@ -69,3 +65,15 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
         else:
             for a in casas[i]:
                 print(a, end=" ")
+    print("\n=====================================")
+
+
+def verifica_jogada(simbolo, prim_escolha, seg_escolha):
+
+    # Verifica o posicionamento da primeira escolha:
+    if (len(casas[prim_escolha]) >= 2):
+        print("Nada Colocado nessa casas - 1")
+
+    # Verifica o posicionamento da segunda escolha:
+    if (len(casas[seg_escolha]) >= 2):
+        print("Nada Colocado nessa casas - 2")

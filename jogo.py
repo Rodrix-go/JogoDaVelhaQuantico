@@ -27,7 +27,7 @@ while True:
             prim_jogada = int(input("Digite sua primeira casa:"))
             seg_jogada = int(input("Digite sua segunda casa:"))
             if valida_escolha(prim_jogada, seg_jogada):
-                vez != vez  # muda a vez
                 marca_quadrados(simb[vez], num_jogada, prim_jogada, seg_jogada)
-                # verifica_jogada(vez, prim_jogada, seg_jogada)
+                verifica_jogada(vez, prim_jogada, seg_jogada)
+                vez = ~vez  # muda a vez
                 break
