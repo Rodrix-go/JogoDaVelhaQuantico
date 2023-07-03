@@ -46,7 +46,7 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
             print(casas[b], b)
             espacamento = len(casas[b])
 
-    print("espaçamento: ", espacamento)
+    #print("espaçamento: ", espacamento)
 
     for i in range(9):
 
@@ -77,3 +77,5 @@ def verifica_jogada(simbolo, prim_escolha, seg_escolha):
     # Verifica o posicionamento da segunda escolha:
     if (len(casas[seg_escolha]) >= 2):
         print("Nada Colocado nessa casas - 2")
+
+    print("\n=====================================")
