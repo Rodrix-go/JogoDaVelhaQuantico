@@ -2,6 +2,7 @@
 # teste git
 from func import *
 import time
+
 print('Rodando')
 nomes = ["X", "O"]
 simb = ["X", "O"]
@@ -28,4 +29,4 @@ while True:
             # verifica_jogada(vez, prim_jogada, seg_jogada)
             vez = ~vez  # muda a vez
             break
-    #time.sleep(2) #Delay entre as jogadas
+    time.sleep(2) #Delay entre as jogadas
