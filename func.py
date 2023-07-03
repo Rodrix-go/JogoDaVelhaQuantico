@@ -50,7 +50,7 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
             print(casas[b], b)
             espacamento = len(casas[b])
 
-    print("espaçamento: ", espacamento)
+    #print("espaçamento: ", espacamento)
 
     for i in range(9):
 
@@ -69,3 +69,5 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
         else:
             for a in casas[i]:
                 print(a, end=" ")
+
+    print("\n=====================================")
