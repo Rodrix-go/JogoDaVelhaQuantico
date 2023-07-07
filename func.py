@@ -109,18 +109,6 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
         else:
             for a in casas[i]:
                 print(a, end=" ")
-    print("\n=====================================")
-
-
-def verifica_jogada(simbolo, prim_escolha, seg_escolha):
-
-    # Verifica o posicionamento da primeira escolha:
-    if (len(casas[prim_escolha]) >= 2):
-        print("Nada Colocado nessa casas - 1")
-
-    # Verifica o posicionamento da segunda escolha:
-    if (len(casas[seg_escolha]) >= 2):
-        print("Nada Colocado nessa casas - 2")
 
     print("\n=====================================")
 
@@ -186,8 +174,8 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
 
             elemento_track = verifica_casa(next_casa_track,elementos_to_ignorar)
             if (len(elemento_track) > 1):
-                
                 lista_aux = []
+                
                 lista_aux(elemento_trakeado)
                 lista_aux(next_casa_track)
                 lista_aux(i)

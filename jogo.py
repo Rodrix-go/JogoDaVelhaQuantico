@@ -2,7 +2,6 @@
 # teste git
 from func import *
 import time
-
 print('Rodando')
 nomes = ["X", "O"]
 simb = ["X", "O"]
@@ -30,14 +29,19 @@ while True:
         if valida_escolha(prim_jogada, seg_jogada):
             marca_quadrados(simb[vez], num_jogada, prim_jogada, seg_jogada)
             caminho, resultado = verifica_jogada(num_jogada, prim_jogada)
+            
             if(resultado == True):
-                mostrar_casas()
                 Marcando_Pontos(vez, prim_jogada, seg_jogada, caminho)
                 mostrar_casas()
-            resultado = verifica_ganhou()
-            if(resultado == 0) or (resultado == 1):
-                print(f'O jogador(a) {nomes[resultado]} Ganhou !!!')
-                break
+            
+           
+                resultado_partida = verifica_ganhou()
+                print('Resultado:',resultado_partida)
+                if (resultado_partida != False):
+                    if(resultado_partida == 0) or (resultado_partida == 1):
+                        print(f'O jogador(a) {nomes[resultado_partida]} Ganhou !!!')
+                        break
+            
             vez = ~vez  # muda a vez
             break
     #time.sleep(2) #Delay entre as jogadas
