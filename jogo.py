@@ -36,7 +36,7 @@ while True:
                                 caminho, num_jogada)
                 mostrar_casas()
                 resultado_partida = verifica_ganhou()
-                print('\nResultado da Partida:', resultado_partida)
+                # print('\nResultado da Partida:', resultado_partida)
 
             vez = ~vez  # muda a vez
             break

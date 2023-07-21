@@ -1,7 +1,5 @@
 import time
 
-import time
-
 opcs_validas = """
 0|1|2
 3|4|5
@@ -11,10 +9,6 @@ opcs_validas = """
 simb = ["O ", "X "]
 
 
-def printar():
-    print("oi")
-
-
 def mostrar_casas():
     espacamento = 1
 
@@ -23,43 +17,7 @@ def mostrar_casas():
             print(casas[b], b)
             espacamento = len(casas[b])
 
-    print("espaçamento: ", espacamento)
-
-    for i in range(9):
-
-        if (i % 3 == 0):
-            print()
-        else:
-            print(" | ", end="")
-
-        if (len(casas[i]) != espacamento):
-            qntd_de_espaco = espacamento - len(casas[i])
-            for opcs in casas[i]:
-                print(opcs, end=" ")
-            espaco = "   "
-            print(f"{espaco*qntd_de_espaco}", end="")
-
-        else:
-            for a in casas[i]:
-                print(a, end=" ")
-
-
-simb = ["O ", "X "]
-
-
-def printar():
-    print("oi")
-
-
-def mostrar_casas():
-    espacamento = 1
-
-    for b in range(8):
-        if len(casas[b]) > espacamento:
-            print(casas[b], b)
-            espacamento = len(casas[b])
-
-    print("espaçamento: ", espacamento)
+    # print("espaçamento: ", espacamento)
 
     for i in range(9):
 
@@ -103,15 +61,6 @@ def valida_escolha(prim_escolha, seg_escolha):
         print("Selecione Novamente !!")
         return False
 
-    elif (simb[0] in casas[prim_escolha]) or ((simb[1] in casas[prim_escolha])):
-        print(f'A casa {prim_escolha} já está definida')
-        print("Selecione Novamente !!")
-        return False
-    elif (simb[0] in casas[seg_escolha]) or ((simb[1] in casas[seg_escolha])):
-        print(f'A casa {seg_escolha} já está definida')
-        print("Selecione Novamente !!")
-        return False
-
     else:
         return True
 
@@ -140,8 +89,7 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
             print(casas[b], b)
             espacamento = len(casas[b])
 
-    print("espaçamento: ", espacamento)
-    print("espaçamento: ", espacamento)
+    # print("espaçamento: ", espacamento)
 
     for i in range(9):
 
@@ -174,8 +122,7 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
     for elemento in elementos:
         next_casa_elementos.append(find_elements(
             elemento, ignorar=casa_primeira_jogada))
-    print(
-        f'Primeira Vez - Elementos:{elementos} e suas proximas casas {next_casa_elementos}')
+    # print(f'Primeira Vez - Elementos:{elementos} e suas proximas casas {next_casa_elementos}')
 
     probabilidade = num_jogada
     elementos_to_ignorar = []
@@ -218,11 +165,9 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
                 # Sempre vou para o ultimo elemento presente
                 next_casa_track = find_elements(
                     elemento_track[0], casas_primeiros_elementos[cntrl_elements])
-                print(
-                    f'A Fora o {primeiros_elementos[cntrl_elements]} tem {elemento_track} e a prox casa vai ser {next_casa_track}')
+                # print(f'A Fora o {primeiros_elementos[cntrl_elements]} tem {elemento_track} e a prox casa vai ser {next_casa_track}')
         else:
-            print(
-                f'Trakeando o  elemento {elemento_track[0]}, na casa {next_casa_track}')
+            # print(f'Trakeando o  elemento {elemento_track[0]}, na casa {next_casa_track}')
             elemento_trakeado = elemento_track[0]
 
             elementos_to_ignorar.append(elemento_track[0])
@@ -309,9 +254,9 @@ def Marcando_Pontos(vez, casa_primeira_jogada, casa_segunda_jogada, caminho, num
         caminho, resultado = verifica_jogada(num_jogada, casa_segunda_jogada)
         comeco = casa_segunda_jogada
 
-    print('Caminho:', caminho)  # Printando como ficou o caminho
+    # print('Caminho:', caminho)  # Printando como ficou o caminho
     vez = ~vez
-    print(f'Coloquei o {simb[vez]} na casa {comeco}')
+    # print(f'Coloquei o {simb[vez]} na casa {comeco}')
     casas[comeco].pop()
     casas[comeco][0] = simb[vez]
 
@@ -343,7 +288,7 @@ def find_elements(element, ignorar=10):
     for a in range(9):
         for b in range(len(casas[a])):
             if (casas[a][b] == element) and (a != ignorar):
-                print(f'O elemento {element} está na casas', a)
+                # print(f'O elemento {element} está na casas', a)
                 casas_elements = a
 
     return casas_elements
