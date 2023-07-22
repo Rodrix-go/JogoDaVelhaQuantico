@@ -1,3 +1,5 @@
 # JogoDaVelhaQuantico
 Código do jogo da velha 
-Máteria de fisica quântica
+
+Instruções do Jogo: [AQUI](http://www.cel.edu/Quantum/Tic-Tac-Toe/)
+

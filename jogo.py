@@ -19,10 +19,9 @@ resultado_partida = False  # Verifica se alguem fez velha
 
 while True:
     num_jogada += 1
-    print('=====================================')
-    print(
-        f"{num_jogada}° - Vez do jogador {simb[vez]}, selecione uma casa {nomes[vez]}")
+    print(f"{num_jogada}° - Vez do jogador {simb[vez]}, selecione uma casa {nomes[vez]}")
     print(opcs_validas)
+    mostrar_casas()
 
     while True:
         prim_jogada = int(input("Digite sua primeira casa: "))
@@ -43,7 +42,9 @@ while True:
 
     if (resultado_partida != False):
         if (resultado_partida == "O "):
-            print(f'O jogador(a) {resultado_partida},{nomes[0]} Ganhou !!!')
+            print(f'O {resultado_partida}- jogador(a) {nomes[0]} Ganhou !!!')
         if (resultado_partida == "X "):
-            print(f'O jogador(a) {resultado_partida},{nomes[1]} Ganhou !!!')
+            print(f'O {resultado_partida}- jogador(a) {nomes[1]} Ganhou !!!')
         break
+
+    time.sleep(2)

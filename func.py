@@ -1,20 +1,21 @@
 import time
 
 opcs_validas = """
-0|1|2
-3|4|5
-6|7|8
+Casas Disponíveis:
+    0|1|2
+    3|4|5
+    6|7|8
 """
 
 simb = ["O ", "X "]
 
 
 def mostrar_casas():
+    print("Tabuleiro:", end='')
     espacamento = 1
 
     for b in range(8):
         if len(casas[b]) > espacamento:
-            print(casas[b], b)
             espacamento = len(casas[b])
 
     # print("espaçamento: ", espacamento)
@@ -36,7 +37,7 @@ def mostrar_casas():
         else:
             for a in casas[i]:
                 print(a, end=" ")
-
+    print('\n')
 
 def valida_escolha(prim_escolha, seg_escolha):
 
@@ -86,7 +87,6 @@ def marca_quadrados(simbolo, num_jogada, prim_escolha, seg_escolha):
 
     for b in range(8):
         if len(casas[b]) > espacamento:
-            print(casas[b], b)
             espacamento = len(casas[b])
 
     # print("espaçamento: ", espacamento)
@@ -140,8 +140,7 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
     fila = []
     while i < probabilidade:
         if (i == 0):
-            print(
-                f'Trakeando o  elemento {primeiros_elementos[cntrl_elements]}, na casa {casas_primeiros_elementos[cntrl_elements]}')
+            #print(f'Trakeando o  elemento {primeiros_elementos[cntrl_elements]}, na casa {casas_primeiros_elementos[cntrl_elements]}')
             elementos_to_ignorar.append(primeiros_elementos[cntrl_elements])
 
             vetor = []
@@ -192,14 +191,13 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
                 # Sempre vou pegar o primeiro
                 next_casa_track = find_elements(
                     elemento_track[0], next_casa_track)
-                print(
-                    f'A Fora o {elemento_trakeado} tem {elemento_track} e a prox casa vai ser {next_casa_track}, len: {len(elemento_track)}')
+                #print(f'A Fora o {elemento_trakeado} tem {elemento_track} e a prox casa vai ser {next_casa_track}, len: {len(elemento_track)}')
 
         # Verificações
 
         if (len(elemento_track) == 0):
-            print('Só tem um elemento')
-            print('Fila:', fila)
+            #print('Só tem um elemento')
+            #print('Fila:', fila)
             if (len(fila) == 0):
 
                 if cntrl_elements != len(primeiros_elementos)-1:
@@ -209,7 +207,7 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
                     return caminho_track, False
 
             else:
-                print('Não tinha nada naquele caminho, voltando...')
+                #print('Não tinha nada naquele caminho, voltando...')
                 aux = len(fila)-1
 
                 elemento_track = fila[aux][0]
@@ -230,15 +228,14 @@ def verifica_jogada(num_jogada, casa_primeira_jogada):
         else:
             i += 1
 
-        print("=====================================")
+        #print("=====================================")
         # print('press to continue', 'Valor de i:', i, 'Possibilidade:',probabilidade)
         # input()
 
 
 def Marcando_Pontos(vez, casa_primeira_jogada, casa_segunda_jogada, caminho, num_jogada):
-    print("=====================================")
     print('Sua jogada resultou em um Colapso !!')
-    print(f'Casa {casa_primeira_jogada} ou Casa {casa_segunda_jogada}')
+    print(f'        Casa {casa_primeira_jogada} ou Casa {casa_segunda_jogada}')
 
     # Selecionando por qual das duas opções deseja começar
     while True:
@@ -265,7 +262,7 @@ def Marcando_Pontos(vez, casa_primeira_jogada, casa_segunda_jogada, caminho, num
         vez = ~vez
         casas[caminho[i][1]].pop()
         casas[caminho[i][1]][0] = simb[vez]
-        print(f'Coloquei o {simb[vez]} na casa {caminho[i][1]}')
+        #print(f'Coloquei o {simb[vez]} na casa {caminho[i][1]}')
         i += 1
 
 
